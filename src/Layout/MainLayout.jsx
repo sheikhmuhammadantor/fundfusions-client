@@ -1,19 +1,15 @@
 import { Outlet } from "react-router-dom"
 import Footer from "../Components/Footer"
-import Navbar from "../Components/Navbar"
+import Header from "../Components/Header"
 
 function MainLayout() {
     return (
         <>
-            <section>
-                <Navbar />
-            </section>
-            <section className="container mx-auto">
+            <Header />
+            <main className="text-center my-12 text-2xl">
                 <Outlet />
-            </section>
-            <section className="bg-base-300 text-base-content">
-                <Footer />
-            </section>
+            </main>
+            <Footer />
         </>
     )
 }

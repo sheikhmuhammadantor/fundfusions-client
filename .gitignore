@@ -12,7 +12,6 @@ dist
 dist-ssr
 *.local
 
-__note.txt
 .env
 
 # Editor directories and files
