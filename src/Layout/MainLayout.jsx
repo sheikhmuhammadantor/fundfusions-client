@@ -8,7 +8,7 @@ function MainLayout() {
             <section className="mt-2">
                 <Navbar />
             </section>
-            <section className="container mx-auto px-5">
+            <section className="container mx-auto px-5 my-12">
                 <Outlet />
             </section>
             <section>
