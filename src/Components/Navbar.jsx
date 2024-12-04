@@ -4,6 +4,8 @@ import { Link, NavLink } from 'react-router-dom'
 import logo from '../assets/logo.png'
 import toast from 'react-hot-toast'
 import { AuthContext } from '../Providers/AuthProvider'
+import { RiSunLine } from 'react-icons/ri'
+import { IoIosMoon } from 'react-icons/io'
 
 function Navbar() {
 
@@ -12,6 +14,15 @@ function Navbar() {
 
   const html = document.getElementsByTagName('html')[0];
   html.setAttribute("data-theme", theme);
+
+  const handelChangeTheme = () => {
+    if (theme === "dark") {
+      setTheme("light");
+    }
+    if (theme === "light") {
+      setTheme("dark");
+    }
+  }
 
   const links = <>
     <li><NavLink to="/">Home</NavLink></li>
@@ -45,6 +56,11 @@ function Navbar() {
         <Link to='/' className="btn btn-ghost text-xl px-0">
           <img className='h-full bg-white rounded-lg' src={logo} alt="FundFusions Logo" />
         </Link>
+        <span onClick={handelChangeTheme} className="btn btn-sm text-2xl hidden md:block ml-2">
+          {
+            (theme === "dark") ? <RiSunLine /> : <IoIosMoon />
+          }
+        </span>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">

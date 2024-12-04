@@ -24,7 +24,7 @@ function AddCampaign() {
 
     const newCampaign = { title, type, date, description, name, email, amount, photo }
     // console.log(newCampaign);
-    
+
     fetch('http://localhost:3000/addCampaign', {
       method: 'POST',
       headers: {
@@ -53,7 +53,7 @@ function AddCampaign() {
         <Link to="/" className="flex items-center gap-2 text-xl font-semibold outline outline-1 w-max py-1 px-3 rounded-full cursor-pointer hover:outline-2 hover:shadow-xl"><FaArrowLeft /> Back to home</Link>
       </div>
       <div>
-        <div className="bg-[#f4f3f0] w-full shadow-2xl border rounded-2xl py-6">
+        <div className="bg-base-200 w-full shadow-2xl border rounded-2xl py-6">
           <div className="text-center px-4">
             <h2 className="text-3xl font-semibold mb-3">Add New Campaign</h2>
             <p className="">Bring your idea to life! Share your vision, set goals, and inspire others to support you. <br /> Fill in the form below to begin your journey toward making a difference.</p>
@@ -71,19 +71,19 @@ function AddCampaign() {
               {/* Campaign type */}
               <div className="w-full grid grid-cols-4 justify-evenly items-end">
                 <h1 className="col-span-4 md:mt-0 mt-2">Campaign type</h1>
-                <label className="label justify-center gap-2 lg:col-span-1 md:col-span-2">
+                <label className="label justify-center gap-2 lg:col-span-1 md:col-span-2 col-span-2 sm:col-span-1">
                   <span className="label-text">Personal</span>
                   <input type="radio" name="type" value="personal" className="radio radio-warning" />
                 </label>
-                <label className="label justify-center gap-2 lg:col-span-1 md:col-span-2">
+                <label className="label justify-center gap-2 lg:col-span-1 md:col-span-2 col-span-2 sm:col-span-1">
                   <span className="label-text">Startup</span>
                   <input type="radio" name="type" value="startup" className="radio radio-warning" />
                 </label>
-                <label className="label justify-center gap-2 lg:col-span-1 md:col-span-2">
+                <label className="label justify-center gap-2 lg:col-span-1 md:col-span-2 col-span-2 sm:col-span-1">
                   <span className="label-text">Business</span>
                   <input type="radio" name="type" value="business" className="radio radio-warning" />
                 </label>
-                <label className="label justify-center gap-2 lg:col-span-1 md:col-span-2">
+                <label className="label justify-center gap-2 lg:col-span-1 md:col-span-2 col-span-2 sm:col-span-1">
                   <span className="label-text">Ideas</span>
                   <input type="radio" name="type" value="ideas" className="radio radio-warning" />
                 </label>
