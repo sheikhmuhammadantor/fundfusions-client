@@ -9,7 +9,43 @@ function AddCampaign() {
 
   const [startDate, setStartDate] = useState(new Date());
 
+  const handelAddCampaign = (e) => {
+    e.preventDefault();
 
+    const form = e.target;
+    const title = form.title.value;
+    const type = form.type.value;
+    const date = form.date.value;
+    const description = form.description.value;
+    const name = form.name.value;
+    const email = form.email.value;
+    const amount = form.amount.value;
+    const photo = form.photo.value;
+
+    const newCampaign = { title, type, date, description, name, email, amount, photo }
+    // console.log(newCampaign);
+    
+    fetch('http://localhost:3000/addCampaign', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(newCampaign)
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+
+        if (data.insertedId) {
+          Swal.fire({
+            title: 'Success !',
+            text: 'New Coffee Added',
+            icon: 'success',
+            confirmButtonText: 'Close'
+          })
+        }
+      })
+  }
 
   return (
     <section>
@@ -23,7 +59,7 @@ function AddCampaign() {
             <p className="">Bring your idea to life! Share your vision, set goals, and inspire others to support you. <br /> Fill in the form below to begin your journey toward making a difference.</p>
           </div>
           {/* From Start Her - */}
-          <form  className="card-body ">
+          <form onSubmit={handelAddCampaign} className="card-body ">
             {/* Campaign Title */}
             <div className="md:flex justify-between gap-6">
               <div className="form-control w-full">
@@ -34,20 +70,20 @@ function AddCampaign() {
               </div>
               {/* Campaign type */}
               <div className="w-full grid grid-cols-4 justify-evenly items-end">
-                <h1 className="col-span-4">Campaign type</h1>
-                <label className="label justify-center gap-2">
+                <h1 className="col-span-4 md:mt-0 mt-2">Campaign type</h1>
+                <label className="label justify-center gap-2 lg:col-span-1 md:col-span-2">
                   <span className="label-text">Personal</span>
                   <input type="radio" name="type" value="personal" className="radio radio-warning" />
                 </label>
-                <label className="label justify-center gap-2">
+                <label className="label justify-center gap-2 lg:col-span-1 md:col-span-2">
                   <span className="label-text">Startup</span>
                   <input type="radio" name="type" value="startup" className="radio radio-warning" />
                 </label>
-                <label className="label justify-center gap-2">
+                <label className="label justify-center gap-2 lg:col-span-1 md:col-span-2">
                   <span className="label-text">Business</span>
                   <input type="radio" name="type" value="business" className="radio radio-warning" />
                 </label>
-                <label className="label justify-center gap-2">
+                <label className="label justify-center gap-2 lg:col-span-1 md:col-span-2">
                   <span className="label-text">Ideas</span>
                   <input type="radio" name="type" value="ideas" className="radio radio-warning" />
                 </label>
@@ -59,7 +95,7 @@ function AddCampaign() {
                 <label className="label">
                   <span className="label-text">Deadline </span>
                 </label>
-                <DatePicker className="input input-bordered w-full" selected={startDate} onChange={(date) => setStartDate(date)} />
+                <DatePicker className="input input-bordered w-full" name="date" selected={startDate} onChange={(date) => setStartDate(date)} />
               </div>
               {/* Minimum Donation Amount */}
               <div className="form-control w-full">
