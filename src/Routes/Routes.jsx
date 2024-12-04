@@ -14,7 +14,7 @@ export const router = createBrowserRouter([
       },
       {
         path: '/addCampaign',
-        element: <AddCampaign />
+        element: <PrivateRoutes><AddCampaign /></PrivateRoutes>
       },
       {
         path: '/campaigns',

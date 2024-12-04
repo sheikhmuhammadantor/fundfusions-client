@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import { FaBars } from 'react-icons/fa'
 import { Link, NavLink } from 'react-router-dom'
 import logo from '../assets/logo.png'
+import toast from 'react-hot-toast'
+import { AuthContext } from '../Providers/AuthProvider'
 
 function Navbar() {
+
+  const { user, signOutUser } = useContext(AuthContext)
+  const [theme, setTheme] = useState("light");
+
+  const html = document.getElementsByTagName('html')[0];
+  html.setAttribute("data-theme", theme);
 
   const links = <>
     <li><NavLink to="/">Home</NavLink></li>
@@ -12,6 +20,16 @@ function Navbar() {
     <li><NavLink to="/myCampaign">My Campaign</NavLink></li>
     <li><NavLink to="/myDonations">My Donations</NavLink></li>
   </>
+
+  const handelSignOut = () => {
+    signOutUser()
+      .then(() => {
+        toast.success('Successfully Sign Out !', {})
+      })
+      .catch(() => {
+        toast.error("Sign Out Error !", {})
+      })
+  }
 
   return (
     <div className="navbar container mx-auto">
@@ -34,7 +52,7 @@ function Navbar() {
         </ul>
       </div>
       <div className="navbar-end">
-        <Link className="btn text-lg">Log Out</Link>
+        <Link onClick={handelSignOut} className="btn text-lg">Log Out</Link>
       </div>
     </div>
   )
