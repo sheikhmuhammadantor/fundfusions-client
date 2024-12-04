@@ -1,8 +1,10 @@
+import HowItWork from "../Components/Home/HowItWork"
+
 function Home() {
   return (
-    <div>
-      home
-    </div>
+    <section>
+      <HowItWork/>
+    </section>
   )
 }
 

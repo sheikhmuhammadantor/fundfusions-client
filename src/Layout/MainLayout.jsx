@@ -5,10 +5,10 @@ import Navbar from "../Components/Navbar"
 function MainLayout() {
     return (
         <>
-            <section className="my-6">
+            <section className="mt-2">
                 <Navbar />
             </section>
-            <section className="text-center my-12 text-2xl">
+            <section className="container mx-auto px-5">
                 <Outlet />
             </section>
             <section>
