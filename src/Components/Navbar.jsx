@@ -34,7 +34,7 @@ function Navbar() {
         </ul>
       </div>
       <div className="navbar-end">
-        <Link className="btn">Button</Link>
+        <Link className="btn text-lg">Log Out</Link>
       </div>
     </div>
   )
