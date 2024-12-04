@@ -5,7 +5,7 @@ import Navbar from "../Components/Navbar"
 function MainLayout() {
     return (
         <>
-            <section>
+            <section className="my-6">
                 <Navbar />
             </section>
             <section className="text-center my-12 text-2xl">
