@@ -21,7 +21,7 @@ function AllCampaign() {
           <tbody>
             {
               obj?.map((data, idx) =>
-                <tr>
+                <tr key={data?._id}>
                   <th>{idx + 1}</th>
                   <th>{data?.title}</th>
                   <td className="hidden sm:block">{data?.type}</td>
