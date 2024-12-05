@@ -11,7 +11,7 @@ function MainLayout() {
             <section className="container mx-auto px-5 my-12">
                 <Outlet />
             </section>
-            <section>
+            <section className="bg-base-200 text-base-content">
                 <Footer />
             </section>
         </>
