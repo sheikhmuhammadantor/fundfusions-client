@@ -76,7 +76,7 @@ function Navbar() {
               </label>
               <div className="absolute top-12 right-0 bg-white shadow-lg border rounded w-60 p-2 hidden group-hover:block">
                 <ul>
-                  <li className="py-1 px-2 hover:bg-gray-200 cursor-pointer">{user?.displayName}</li>
+                  <li className="py-1 px-2 hover:bg-gray-200 cursor-pointer font-semibold">{user?.displayName}</li>
                   <br />
                   <Link onClick={handelSignOut} className="btn text-lg w-full">Log Out</Link>
                 </ul>

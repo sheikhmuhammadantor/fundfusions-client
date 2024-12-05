@@ -2,6 +2,10 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Typewriter } from 'react-simple-typewriter'
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import { Autoplay, Pagination } from 'swiper/modules';
 
 
 const Banner = () => {
@@ -14,20 +18,24 @@ const Banner = () => {
             words={['Perspective', 'Vision', 'Future', 'Dream!', 'Journey', 'Voice', 'Purpose!', 'Legacy', 'Innovation']}
             loop={5}
             cursor
-            cursorStyle='_'/>
+            cursorStyle='_' />
         </span>
       </h1>
-      {/* </div> */}
-      <Swiper className="my-12" spaceBetween={30} slidesPerView={1}
+      <Swiper className="my-12" spaceBetween={30} slidesPerView={1} centeredSlides={true}
         autoplay={{
           delay: 3000,
           disableOnInteraction: false,
         }}
         loop={true}
-        speed={800}>
+        speed={800}
+        pagination={{
+          clickable: true,
+          dynamicBullets: true,
+        }}
+        modules={[Autoplay, Pagination]}>
         {/* Slide 1 */}
         <SwiperSlide>
-          <div className="bg-blue-600 text-white text-center h-[60vh] grid place-items-center rounded-xl bg-center bg-cover bg-no-repeat"
+          <div className="bg-blue-600 text-white text-center h-[60vh] grid place-items-center rounded-2xl bg-center bg-cover bg-no-repeat"
             style={{ backgroundImage: 'url(https://i.ibb.co.com/GpTPhcD/idea.webp)' }}>
             <div>
               <h2 className="text-4xl font-bold mb-2">Fund Your Dream Project Today</h2>
@@ -38,7 +46,7 @@ const Banner = () => {
 
         {/* Slide 2 */}
         <SwiperSlide>
-          <div className="bg-blue-600 text-white text-center h-[60vh] grid place-items-center rounded-xl bg-center bg-cover bg-no-repeat"
+          <div className="bg-blue-600 text-white text-center h-[60vh] grid place-items-center rounded-2xl bg-center bg-cover bg-no-repeat"
             style={{ backgroundImage: 'url(https://i.ibb.co.com/zbGwbc2/minutes.webp)' }}>
             <div>
               <h2 className="text-4xl font-bold mb-2">Start Your Campaign in Minutes</h2>
@@ -49,7 +57,7 @@ const Banner = () => {
 
         {/* Slide 3 */}
         <SwiperSlide>
-          <div className="bg-blue-600 text-white text-center h-[60vh] grid place-items-center rounded-xl bg-center bg-cover bg-no-repeat"
+          <div className="bg-blue-600 text-white text-center h-[60vh] grid place-items-center rounded-2xl bg-center bg-cover bg-no-repeat"
             style={{ backgroundImage: 'url(https://i.ibb.co.com/ch50rtf/believe.jpg)' }}>
             <div>
               <h2 className="text-4xl font-bold mb-2">Back Projects You Believe In</h2>
@@ -60,7 +68,7 @@ const Banner = () => {
 
         {/* Slide 4 */}
         <SwiperSlide>
-          <div className="bg-blue-600 text-white text-center h-[60vh] grid place-items-center rounded-xl bg-center bg-cover bg-no-repeat"
+          <div className="bg-blue-600 text-white text-center h-[60vh] grid place-items-center rounded-2xl bg-center bg-cover bg-no-repeat"
             style={{ backgroundImage: 'url(https://i.ibb.co.com/T40GWMF/dream.jpg)' }}>
             <div>
               <h2 className="text-4xl font-bold mb-2">Make Your Ideas Reality</h2>
