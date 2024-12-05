@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { useLoaderData } from "react-router-dom"
 import { AuthContext } from "../Providers/AuthProvider";
+import Swal from "sweetalert2";
 
 function Details() {
 
@@ -19,10 +20,17 @@ function Details() {
       },
       body: JSON.stringify(donationData)
     })
-      .then(res => {
-        console.log(res);
-        return res.json();
-      }).then(data => console.log(data))
+      .then(res => res.json())
+      .then(data => {
+        if (data.insertedId) {
+          Swal.fire({
+            title: 'Success !',
+            text: 'Successfully Donated !',
+            icon: 'success',
+            confirmButtonText: 'Close'
+          })
+        }
+      })
   }
 
   return (

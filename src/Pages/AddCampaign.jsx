@@ -3,11 +3,14 @@ import { Link } from "react-router-dom";
 import Swal from 'sweetalert2';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../Providers/AuthProvider";
 
 function AddCampaign() {
 
   const [startDate, setStartDate] = useState(new Date());
+  const { user } = useContext(AuthContext);
+  const {email, displayName:name} = user || {};
 
   const handelAddCampaign = (e) => {
     e.preventDefault();
@@ -17,13 +20,10 @@ function AddCampaign() {
     const type = form.type.value;
     const date = form.date.value;
     const description = form.description.value;
-    const name = form.name.value;
-    const email = form.email.value;
     const amount = form.amount.value;
     const photo = form.photo.value;
 
     const newCampaign = { title, type, date, description, name, email, amount, photo }
-    // console.log(newCampaign);
 
     fetch('http://localhost:3000/addCampaign', {
       method: 'POST',
@@ -34,12 +34,10 @@ function AddCampaign() {
     })
       .then(res => res.json())
       .then(data => {
-        console.log(data);
-
         if (data.insertedId) {
           Swal.fire({
             title: 'Success !',
-            text: 'New Coffee Added',
+            text: 'New Campaign Added',
             icon: 'success',
             confirmButtonText: 'Close'
           })
@@ -129,13 +127,13 @@ function AddCampaign() {
                 <label className="label">
                   <span className="label-text">Email</span>
                 </label>
-                <input type="email" name="email" placeholder="Email" className="input input-bordered" required />
+                <input type="email" name="email" placeholder="Email" defaultValue={user?.email} readOnly className="input input-bordered" required />
               </div>
               <div className="form-control w-full">
                 <label className="label">
                   <span className="label-text">Name</span>
                 </label>
-                <input type="text" name="name" placeholder="Name" className="input input-bordered" required />
+                <input type="text" name="name" placeholder="Name" defaultValue={user?.displayName} readOnly className="input input-bordered" required />
               </div>
             </div>
             {/* Add Button */}
