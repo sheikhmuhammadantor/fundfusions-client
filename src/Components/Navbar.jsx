@@ -10,7 +10,7 @@ import { IoIosMoon } from 'react-icons/io'
 function Navbar() {
 
   const { user, signOutUser } = useContext(AuthContext)
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState("dark");
 
   const html = document.getElementsByTagName('html')[0];
   html.setAttribute("data-theme", theme);

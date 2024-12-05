@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom"
+import { Link, useLoaderData } from "react-router-dom"
 
 function AllCampaign() {
 
@@ -26,7 +26,8 @@ function AllCampaign() {
                   <th>{data?.title}</th>
                   <td className="hidden sm:block">{data?.type}</td>
                   <td>{data?.date}</td>
-                  <td>{data?.amount}</td>
+                  <td>${data?.amount}</td>
+                  <td><Link to={`/campaign/${data?._id}`} className="badge badge-accent min-w-max">See more</Link></td>
                 </tr>)
             }
           </tbody>
