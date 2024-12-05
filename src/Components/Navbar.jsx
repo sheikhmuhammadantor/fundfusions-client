@@ -68,7 +68,26 @@ function Navbar() {
         </ul>
       </div>
       <div className="navbar-end">
-        <Link onClick={handelSignOut} className="btn text-lg">Log Out</Link>
+        {
+          user ?
+            <div className="relative group">
+              <label htmlFor="my-drawer-4" className="drawer-button btn px-1 outline-cyan-500 outline-2 outline outline-offset-1 border-none hover:outline-cyan-400 w-12 h-12 rounded-full overflow-hidden">
+                <img className="max-w-full max-h-full" src={user?.photoURL} alt="" />
+              </label>
+              <div className="absolute top-12 right-0 bg-white shadow-lg border rounded w-60 p-2 hidden group-hover:block">
+                <ul>
+                  <li className="py-1 px-2 hover:bg-gray-200 cursor-pointer">{user?.displayName}</li>
+                  <br />
+                  <Link onClick={handelSignOut} className="btn text-lg w-full">Log Out</Link>
+                </ul>
+              </div>
+            </div>
+            :
+            <div className='flex items-center gap-2'>
+              <Link to="/login" className="btn text-lg">Login</Link>
+              <Link to="/register" className="btn text-lg">Register</Link>
+            </div>
+        }
       </div>
     </div>
   )
