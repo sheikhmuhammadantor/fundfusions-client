@@ -1,8 +1,24 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# FundFusions 🌟  
+**Live Site URL:** [Visit FundFusions](https://fundfusions.netlify.app/)
 
-Currently, two official plugins are available:
+## About FundFusions  
+FundFusions is an innovative crowdfunding platform where dreams, ideas, and impactful projects come to life. 
+Our mission is to connect creators and supporters to fund meaningful campaigns and bring visionary ideas to fruition.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features  
+- **Dynamic Campaign Creation:**  
+  Create campaigns with rich details, including images, titles, descriptions, types, and funding goals.  
+- **User Authentication:**  
+  Secure login and registration options with personalized user profiles for managing campaigns.  
+- **Seamless Contribution Process:**  
+  Support campaigns effortlessly with our integrated and user-friendly donation process.  
+- **Deadline-Based Campaigns:**  
+  Each campaign has a clear deadline to encourage timely support and project momentum.  
+- **Interactive Banner Slider:**  
+  Enjoy a visually appealing, auto-looping slider showcasing key messages and campaigns.  
+
+## Tech Stack  
+- **Frontend:** React, Tailwind CSS  
+- **Backend:** Node.js, Express.js  
+- **Database:** MongoDB  
