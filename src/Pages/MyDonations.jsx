@@ -5,18 +5,13 @@ function MyDonations() {
 
   const { user } = useContext(AuthContext);
 
-  // useEffect(() => {
-  //   fetch('http://localhost:3000/myDonations', {
-  //     method: 'GET',
-  //     headers: {
-  //       'content-type': 'application/json'
-  //     },
-  //     body: JSON.stringify(user?.email)
-  //   })
-  //   .then(res => res.json())
-  //   .then(data => console.log(data))
-  //   console.log(user.email)
-  // }, []);
+  useEffect(() => {
+    if(user?.email){
+      fetch(`http://localhost:3000/myDonations?email=${user.email}`)
+      .then(res => res.json())
+      .then(data => console.log(data))
+    }
+  }, []);
 
   return (
     <div>
