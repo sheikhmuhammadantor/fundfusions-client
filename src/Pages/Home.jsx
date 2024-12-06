@@ -10,7 +10,7 @@ function Home() {
       <br />
       {/* <HowItWork /> */}
       <br />
-      <RunningCampaign />
+      {/* <RunningCampaign /> */}
       <br />
       {/* <InvestorsSay /> */}
       <br />
