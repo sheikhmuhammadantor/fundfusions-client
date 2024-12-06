@@ -36,7 +36,8 @@ export const router = createBrowserRouter([
       },
       {
         path: '/myDonations',
-        element: <PrivateRoutes><MyDonations /></PrivateRoutes>
+        element: <PrivateRoutes><MyDonations /></PrivateRoutes>,
+        // loader: () => fetch('http://localhost:3000/myDonations')
       },
       {
         path: '/login',

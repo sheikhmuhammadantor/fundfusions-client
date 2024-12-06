@@ -4,6 +4,8 @@ function AllCampaign() {
 
   const obj = useLoaderData();
 
+  if(!obj.length) return <h1 className="text-center text-4xl my-16 font-semibold">No Campaign Available Yet</h1>
+
   return (
     <div className="mb-16">
       <h1 className="text-center text-4xl my-16 font-semibold">All Campaigns</h1>

@@ -71,19 +71,19 @@ function AddCampaign() {
                 <h1 className="col-span-4 md:mt-0 mt-2">Campaign type</h1>
                 <label className="label justify-center gap-2 lg:col-span-1 md:col-span-2 col-span-2 sm:col-span-1">
                   <span className="label-text">Personal</span>
-                  <input type="radio" name="type" value="personal" className="radio radio-warning" />
+                  <input type="radio" name="type" value="Personal" className="radio radio-warning" />
                 </label>
                 <label className="label justify-center gap-2 lg:col-span-1 md:col-span-2 col-span-2 sm:col-span-1">
                   <span className="label-text">Startup</span>
-                  <input type="radio" name="type" value="startup" className="radio radio-warning" />
+                  <input type="radio" name="type" value="Startup" className="radio radio-warning" />
                 </label>
                 <label className="label justify-center gap-2 lg:col-span-1 md:col-span-2 col-span-2 sm:col-span-1">
                   <span className="label-text">Business</span>
-                  <input type="radio" name="type" value="business" className="radio radio-warning" />
+                  <input type="radio" name="type" value="Business" className="radio radio-warning" />
                 </label>
                 <label className="label justify-center gap-2 lg:col-span-1 md:col-span-2 col-span-2 sm:col-span-1">
                   <span className="label-text">Ideas</span>
-                  <input type="radio" name="type" value="ideas" className="radio radio-warning" />
+                  <input type="radio" name="type" value="Ideas" className="radio radio-warning" />
                 </label>
               </div>
             </div>
