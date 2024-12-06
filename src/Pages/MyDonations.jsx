@@ -1,22 +1,31 @@
-import { useContext, useEffect } from "react"
+import { useContext, useEffect, useState } from "react"
 import { AuthContext } from "../Providers/AuthProvider";
+import CampaignCard from "../Components/Home/CampaignCard";
 
 function MyDonations() {
 
   const { user } = useContext(AuthContext);
+  const [myCamp, setMyCamp] = useState([]);
 
   useEffect(() => {
     if(user?.email){
       fetch(`http://localhost:3000/myDonations?email=${user.email}`)
       .then(res => res.json())
-      .then(data => console.log(data))
+      .then(data => setMyCamp(data))
     }
   }, []);
 
   return (
-    <div>
-      <h1>My Donations</h1>
+    <div className="m-8">
+    <h1 className="text-5xl font-semibold text-center mb-16">
+      My Donation's
+    </h1>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10 place-items-center">
+      {
+        myCamp.map((data) => <CampaignCard key={data._id} data={data} callFrom="myDonation" />)
+      }
     </div>
+  </div>
   )
 }
 

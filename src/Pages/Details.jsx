@@ -11,14 +11,13 @@ function Details() {
 
   const handelDonation = (campId) => {
     const { email, displayName } = user || {};
-    const donationData = { campId, email, displayName }
 
     fetch('http://localhost:3000/campaign/:id', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(donationData)
+      body: JSON.stringify({ title, photo, type, date, description, amount, email, displayName})
     })
       .then(res => res.json())
       .then(data => {
@@ -43,9 +42,7 @@ function Details() {
           <h2 className="card-title">{title}</h2>
           <div className="badge badge-success text-white p-3">${amount}</div>
           <p>{description}</p>
-          {/* <p>{type}</p> */}
           <div className="badge badge-primary text-white p-3">{type}</div>
-          {/* <p>${amount}</p> */}
           <p className="underline">{date}</p>
           <div className="card-actions justify-center mt-4">
             <button onClick={() => handelDonation(_id)} className="btn btn-sm btn-accent text-lg px-8 disabled:btn-info disabled:opacity-60 disabled:cursor-none">Donate</button>
