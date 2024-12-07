@@ -41,7 +41,7 @@ function CampTableData({ data, idx, myCamp, setMyCamp }) {
             <td className="hidden sm:block">${data?.amount}</td>
             <td>{data?.date}</td>
             <td><Link to={`/updateCampaign/${data?._id}`} className="badge badge-accent min-w-max">Update</Link></td>
-            <td onClick={() => handelDeleteCampaign(data?._id)} className="badge p-3 bg-red-600 min-w-max"><ImCross /></td>
+            <td onClick={() => handelDeleteCampaign(data?._id)} className="badge p-3 bg-red-600 min-w-max text-slate-200"><ImCross /></td>
         </tr>
     )
 }

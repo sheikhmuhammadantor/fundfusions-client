@@ -1,14 +1,24 @@
+import { useState } from "react";
 import { Link, useLoaderData } from "react-router-dom"
 
 function AllCampaign() {
 
   const obj = useLoaderData();
+  const [allCamp, setAllCamp] = useState(obj);
 
-  if(!obj.length) return <h1 className="text-center text-4xl my-16 font-semibold">No Campaign Available Yet</h1>
+  if (!allCamp?.length) return <h1 className="text-center text-4xl my-16 font-semibold">No Campaign Available Yet</h1>
+
+  const handelSortClick = () => {
+    const [...sortCamp] = allCamp.sort((a, b) => parseInt(a.amount) - parseInt(b.amount));
+    setAllCamp(sortCamp);
+    console.log(sortCamp);
+    console.log(allCamp);
+  }
 
   return (
     <div className="mb-16">
-      <h1 className="text-center text-4xl my-16 font-semibold">All Campaigns</h1>
+      <div className="text-right mr-6"><button onClick={handelSortClick} className="btn btn-warning text-black text-xl">Sort</button></div>
+      <h1 className="text-center text-4xl mb-8 font-semibold">All Campaigns</h1>
       <div className="overflow-x-auto">
         <table className="table">
           <thead>
@@ -22,7 +32,7 @@ function AllCampaign() {
           </thead>
           <tbody>
             {
-              obj?.map((data, idx) =>
+              allCamp.map((data, idx) =>
                 <tr key={data?._id}>
                   <th>{idx + 1}</th>
                   <th>{data?.title}</th>
