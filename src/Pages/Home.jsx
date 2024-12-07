@@ -6,13 +6,13 @@ import RunningCampaign from "../Components/Home/RunningCampaign"
 function Home() {
   return (
     <section>
-      <Banner />
+      {/* <Banner /> */}
       <br />
-      <HowItWork />
+      {/* <HowItWork /> */}
       <br />
-      <RunningCampaign />
+      {/* <RunningCampaign /> */}
       <br />
-      <InvestorsSay />
+      {/* <InvestorsSay /> */}
       <br />
     </section>
   )

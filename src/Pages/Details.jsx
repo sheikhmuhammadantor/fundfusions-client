@@ -1,23 +1,38 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom"
 import { AuthContext } from "../Providers/AuthProvider";
 import Swal from "sweetalert2";
 
 function Details() {
 
+  const [datelineOver, setDatelineOver] = useState(false);
   const { user } = useContext(AuthContext);
   const data = useLoaderData();
   const { _id, title, photo, type, date, description, amount } = data || {};
 
+  useEffect(() => {
+    const currentDate = new Date();
+    if (new Date(data?.date) >= currentDate) setDatelineOver(true);
+  }, []);
+
   const handelDonation = (campId) => {
     const { email, displayName } = user || {};
+
+    if (!datelineOver) {
+      return Swal.fire({
+        title: 'Warning !',
+        text: `Campaign Dateline Over !`,
+        icon: 'error',
+        confirmButtonText: 'Close'
+      })
+    }
 
     fetch('http://localhost:3000/campaign/:id', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ title, photo, type, date, description, amount, email, displayName})
+      body: JSON.stringify({ title, photo, type, date, description, amount, email, displayName })
     })
       .then(res => res.json())
       .then(data => {
