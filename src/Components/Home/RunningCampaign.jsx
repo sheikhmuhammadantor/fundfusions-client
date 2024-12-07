@@ -10,7 +10,7 @@ function RunningCampaign() {
   useEffect(() => {
     const currentDate = new Date();
 
-    fetch('http://localhost:3000/campaigns')
+    fetch('https://fund-fusions-server.vercel.app/campaigns')
       .then(res => res.json())
       .then(data => {
         const newCamp = [...data].filter((obj) => new Date(obj.date) >= currentDate)

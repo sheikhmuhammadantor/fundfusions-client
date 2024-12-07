@@ -25,7 +25,7 @@ function AddCampaign() {
 
     const newCampaign = { title, type, date, description, name, email, amount, photo }
 
-    fetch('http://localhost:3000/addCampaign', {
+    fetch('https://fund-fusions-server.vercel.app/addCampaign', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'
@@ -46,7 +46,7 @@ function AddCampaign() {
   }
 
   return (
-    <section>
+    <section className="my-12">
       <div className="my-6 ml-8">
         <Link to="/" className="flex items-center gap-2 text-xl font-semibold outline outline-1 w-max py-1 px-3 rounded-full cursor-pointer hover:outline-2 hover:shadow-xl"><FaArrowLeft /> Back to home</Link>
       </div>
@@ -138,7 +138,7 @@ function AddCampaign() {
             </div>
             {/* Add Button */}
             <div className="mt-8 mx-8 text-center">
-              <button className="btn text-[#553b2f] text-lg bg-[#d2b48c] outline-2 outline outline-[#553b2f] outline-offset-0 w-full">Add New Campaign</button>
+              <button className="btn btn-accent text-lg text-white outline-2 outline outline-black outline-offset-0 w-full">Add New Campaign</button>
             </div>
           </form>
         </div>

@@ -19,12 +19,12 @@ export const router = createBrowserRouter([
       {
         path: '/campaigns',
         element: <AllCampaign />,
-        loader: () => fetch('http://localhost:3000/campaigns')
+        loader: () => fetch('https://fund-fusions-server.vercel.app/campaigns')
       },
       {
         path: '/campaign/:id',
         element: <PrivateRoutes><Details /></PrivateRoutes>,
-        loader: ({ params }) => fetch(`http://localhost:3000/campaign/${params.id}`)
+        loader: ({ params }) => fetch(`https://fund-fusions-server.vercel.app/campaign/${params.id}`)
       },
       {
         path: '/myCampaign',
@@ -33,7 +33,7 @@ export const router = createBrowserRouter([
       {
         path: '/updateCampaign/:id',
         element: <PrivateRoutes><UpdateCampaign /></PrivateRoutes>,
-        loader: ({ params }) => fetch(`http://localhost:3000/campaign/${params.id}`)
+        loader: ({ params }) => fetch(`https://fund-fusions-server.vercel.app/campaign/${params.id}`)
       },
       {
         path: '/myDonations',

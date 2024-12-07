@@ -27,7 +27,7 @@ function Details() {
       })
     }
 
-    fetch('http://localhost:3000/campaign/:id', {
+    fetch('https://fund-fusions-server.vercel.app/campaign/:id', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

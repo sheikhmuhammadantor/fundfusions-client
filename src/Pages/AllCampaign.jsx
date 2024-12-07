@@ -9,8 +9,12 @@ function AllCampaign() {
   const [allCamp, setAllCamp] = useState(obj);
 
   const handelSortClick = () => {
-    const [...sortCamp] = allCamp.sort((a, b) => parseInt(a.amount) - parseInt(b.amount));
-    setAllCamp(sortCamp);
+    // const [...sortCamp] = allCamp.sort((a, b) => parseInt(a.amount) - parseInt(b.amount));
+    // setAllCamp(sortCamp);
+
+    fetch('https://fund-fusions-server.vercel.app/campaigns/sort')
+      .then((res) => res.json())
+      .then((data) => setAllCamp([...data]))
   }
 
   if (loading) {

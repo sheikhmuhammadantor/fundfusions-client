@@ -9,7 +9,7 @@ function MyCampaign() {
 
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:3000/myCampaign?email=${user.email}`)
+      fetch(`https://fund-fusions-server.vercel.app/myCampaign?email=${user.email}`)
         .then(res => res.json())
         .then(data => {
           setMyCamp(data);
