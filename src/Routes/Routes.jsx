@@ -32,7 +32,7 @@ export const router = createBrowserRouter([
       },
       {
         path: '/updateCampaign/:id',
-        element: <UpdateCampaign />,
+        element: <PrivateRoutes><UpdateCampaign /></PrivateRoutes>,
         loader: ({ params }) => fetch(`http://localhost:3000/campaign/${params.id}`)
       },
       {

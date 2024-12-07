@@ -1,9 +1,11 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import CampaignCard from "./CampaignCard";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 function RunningCampaign() {
 
   const [camp, setCamp] = useState([]);
+  const { loading } = useContext(AuthContext);
 
   useEffect(() => {
     const currentDate = new Date();
@@ -15,6 +17,10 @@ function RunningCampaign() {
         setCamp(newCamp.slice(0, 6));
       })
   }, []);
+
+  if (loading) {
+    return <div className='text-3xl min-h-[70vh] grid place-items-center'><span className="loading loading-spinner text-info loading-lg"></span></div>
+  }
 
   return (
     <div className="m-8">
