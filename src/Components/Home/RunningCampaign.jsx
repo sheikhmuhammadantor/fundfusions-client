@@ -13,7 +13,7 @@ function RunningCampaign() {
     fetch('http://localhost:3000/campaigns')
       .then(res => res.json())
       .then(data => {
-        const newCamp = data.filter((obj) => new Date(obj.date) >= currentDate)
+        const newCamp = [...data].filter((obj) => new Date(obj.date) >= currentDate)
         setCamp(newCamp.slice(0, 6));
       })
   }, []);

@@ -39,10 +39,10 @@ function UpdateCampaign() {
       })
         .then(res => res.json())
         .then(data => {
-          if (data.insertedId) {
+          if (data.modifiedCount) {
             Swal.fire({
               title: 'Success !',
-              text: 'New Campaign Added',
+              text: 'Campaign Update Successfully !',
               icon: 'success',
               confirmButtonText: 'Close'
             })
@@ -58,8 +58,8 @@ function UpdateCampaign() {
       <div>
         <div className="bg-base-200 w-full shadow-2xl border rounded-2xl py-6">
           <div className="text-center px-4">
-            <h2 className="text-3xl font-semibold mb-3">Add New Campaign</h2>
-            <p className="">Bring your idea to life! Share your vision, set goals, and inspire others to support you. <br /> Fill in the form below to begin your journey toward making a difference.</p>
+            <h2 className="text-3xl font-semibold mb-3">Update Campaign</h2>
+            <p className="">You can easily modify their existing campaigns. easily modify their <br /> existing campaigns. (Only authenticated users can make updates his campaigns.)</p>
           </div>
           {/* From Start Her - */}
           <form onSubmit={handelAddCampaign} className="card-body ">
@@ -143,7 +143,7 @@ function UpdateCampaign() {
             </div>
             {/* Add Button */}
             <div className="mt-8 mx-8 text-center">
-              <button className="btn text-[#553b2f] text-lg bg-[#d2b48c] outline-2 outline outline-[#553b2f] outline-offset-0 w-full">Add New Campaign</button>
+              <button className="btn text-[#553b2f] text-lg bg-[#d2b48c] outline-2 outline outline-[#553b2f] outline-offset-0 w-full">Update Campaign</button>
             </div>
           </form>
         </div>
