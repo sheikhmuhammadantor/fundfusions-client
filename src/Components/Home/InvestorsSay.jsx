@@ -1,4 +1,5 @@
 import { Typewriter } from "react-simple-typewriter"
+import { Tooltip as ReactTooltip } from "react-tooltip";
 
 function InvestorsSay() {
   return (
@@ -15,46 +16,52 @@ function InvestorsSay() {
           </span>
         </h1>
       </div>
+      <ReactTooltip
+        id="my-tooltip"
+        place="bottom"
+        variant="info"
+        content="This is Our Investor"
+      />
       <div>
         <label htmlFor="my-drawer-4" className="drawer-button btn px-1 outline-cyan-500 outline-2 outline outline-offset-1 border-none hover:outline-cyan-400 w-12 h-12 rounded-full overflow-hidden">
           <img className="max-w-full max-h-full" src='https://randomuser.me/api/portraits/men/12.jpg' alt="" />
         </label>
-        <h3 className='text-2xl font-semibold my-2'>Stan A</h3>
+        <h3 data-tooltip-id="my-tooltip" className='w-max mx-auto text-2xl font-semibold my-2'>Stan A</h3>
         <p className='max-w-[78%] mx-auto'>Their careful selection and vetting of sponsors and deals has enabled me to invest with confidence.</p>
       </div>
       <div>
         <label htmlFor="my-drawer-4" className="drawer-button btn px-1 outline-cyan-500 outline-2 outline outline-offset-1 border-none hover:outline-cyan-400 w-12 h-12 rounded-full overflow-hidden">
           <img className="max-w-full max-h-full" src='https://randomuser.me/api/portraits/men/31.jpg' alt="" />
         </label>
-        <h3 className='text-2xl font-semibold my-2'>Robert J.</h3>
+        <h3 data-tooltip-id="my-tooltip" className='w-max mx-auto text-2xl font-semibold my-2'>Robert J.</h3>
         <p className='max-w-[78%] mx-auto'>FundFusions allowed me to diversify my overall portfolio by adding different types of real estate.</p>
       </div>
       <div>
         <label htmlFor="my-drawer-4" className="drawer-button btn px-1 outline-cyan-500 outline-2 outline outline-offset-1 border-none hover:outline-cyan-400 w-12 h-12 rounded-full overflow-hidden">
           <img className="max-w-full max-h-full" src='https://randomuser.me/api/portraits/men/40.jpg' alt="" />
         </label>
-        <h3 className='text-2xl font-semibold my-2'>Jim M.</h3>
+        <h3 data-tooltip-id="my-tooltip" className='w-max mx-auto text-2xl font-semibold my-2'>Jim M.</h3>
         <p className='max-w-[78%] mx-auto'>I have always been favorably impressed with their knowledge of the commercial real estate markets.</p>
       </div>
       <div>
         <label htmlFor="my-drawer-4" className="drawer-button btn px-1 outline-cyan-500 outline-2 outline outline-offset-1 border-none hover:outline-cyan-400 w-12 h-12 rounded-full overflow-hidden">
           <img className="max-w-full max-h-full" src='https://randomuser.me/api/portraits/men/83.jpg' alt="" />
         </label>
-        <h3 className='text-2xl font-semibold my-2'>John T.</h3>
+        <h3 data-tooltip-id="my-tooltip" className='w-max mx-auto text-2xl font-semibold my-2'>John T.</h3>
         <p className='max-w-[78%] mx-auto'>FundFusions offered me access in a way that just didn’t exist before.</p>
       </div>
       <div>
         <label htmlFor="my-drawer-4" className="drawer-button btn px-1 outline-cyan-500 outline-2 outline outline-offset-1 border-none hover:outline-cyan-400 w-12 h-12 rounded-full overflow-hidden">
           <img className="max-w-full max-h-full" src='https://randomuser.me/api/portraits/men/4.jpg' alt="" />
         </label>
-        <h3 className='text-2xl font-semibold my-2'>Doh Jon</h3>
+        <h3 data-tooltip-id="my-tooltip" className='w-max mx-auto text-2xl font-semibold my-2'>Doh Jon</h3>
         <p className='max-w-[78%] mx-auto'>Their careful selection and vetting of sponsors and deals has enabled me to invest with confidence.</p>
       </div>
       <div>
         <label htmlFor="my-drawer-4" className="drawer-button btn px-1 outline-cyan-500 outline-2 outline outline-offset-1 border-none hover:outline-cyan-400 w-12 h-12 rounded-full overflow-hidden">
           <img className="max-w-full max-h-full" src='https://randomuser.me/api/portraits/men/33.jpg' alt="" />
         </label>
-        <h3 className='text-2xl font-semibold my-2'>Doh Jon</h3>
+        <h3 data-tooltip-id="my-tooltip" className='w-max mx-auto text-2xl font-semibold my-2'>Doh Jon</h3>
         <p className='max-w-[78%] mx-auto'>I like for Each deal and sponsor are carefully screened before presenting to investors.</p>
       </div>
     </div>

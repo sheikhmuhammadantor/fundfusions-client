@@ -11,8 +11,8 @@ Our mission is to connect creators and supporters to fund meaningful campaigns a
   Create campaigns with rich details, including images, titles, descriptions, types, and funding goals.  
 - **User Authentication:**  
   Secure login and registration options with personalized user profiles for managing campaigns.  
-- **Seamless Contribution Process:**  
-  Support campaigns effortlessly with our integrated and user-friendly donation process.  
+- **Mobile-Friendly Design:**  
+  A fully responsive design ensures smooth navigation and interaction across all devices.
 - **Deadline-Based Campaigns:**  
   Each campaign has a clear deadline to encourage timely support and project momentum.  
 - **Interactive Banner Slider:**  
