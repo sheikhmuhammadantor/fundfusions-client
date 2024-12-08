@@ -35,7 +35,7 @@ const Banner = () => {
         modules={[Autoplay, Pagination]}>
         {/* Slide 1 */}
         <SwiperSlide>
-          <div className="text-white text-center h-[60vh] grid place-items-center rounded-2xl bg-center bg-cover bg-no-repeat"
+          <div className="text-white text-center h-[70vh] grid place-items-center rounded-2xl bg-center bg-cover bg-no-repeat"
             style={{ backgroundImage: 'url(https://i.ibb.co.com/GpTPhcD/idea.webp)' }}>
             <div>
               <h2 className="text-4xl font-bold mb-2">Fund Your Dream Project Today</h2>
@@ -46,7 +46,7 @@ const Banner = () => {
 
         {/* Slide 2 */}
         <SwiperSlide>
-          <div className="text-white text-center h-[60vh] grid place-items-center rounded-2xl bg-center bg-cover bg-no-repeat"
+          <div className="text-white text-center h-[70vh] grid place-items-center rounded-2xl bg-center bg-cover bg-no-repeat"
             style={{ backgroundImage: 'url(https://i.ibb.co.com/zbGwbc2/minutes.webp)' }}>
             <div>
               <h2 className="text-4xl font-bold mb-2">Start Your Campaign in Minutes</h2>
@@ -57,7 +57,7 @@ const Banner = () => {
 
         {/* Slide 3 */}
         <SwiperSlide>
-          <div className="text-white text-center h-[60vh] grid place-items-center rounded-2xl bg-center bg-cover bg-no-repeat"
+          <div className="text-white text-center h-[70vh] grid place-items-center rounded-2xl bg-center bg-cover bg-no-repeat"
             style={{ backgroundImage: 'url(https://i.ibb.co.com/ch50rtf/believe.jpg)' }}>
             <div>
               <h2 className="text-4xl font-bold mb-2">Back Projects You Believe In</h2>
@@ -68,7 +68,7 @@ const Banner = () => {
 
         {/* Slide 4 */}
         <SwiperSlide>
-          <div className="text-white text-center h-[60vh] grid place-items-center rounded-2xl bg-center bg-cover bg-no-repeat"
+          <div className="text-white text-center h-[70vh] grid place-items-center rounded-2xl bg-center bg-cover bg-no-repeat"
             style={{ backgroundImage: 'url(https://i.ibb.co.com/T40GWMF/dream.jpg)' }}>
             <div>
               <h2 className="text-4xl font-bold mb-2">Make Your Ideas Reality</h2>

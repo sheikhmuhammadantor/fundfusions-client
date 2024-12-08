@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { useLoaderData } from "react-router-dom"
+import { useParams } from "react-router-dom"
 import { AuthContext } from "../Providers/AuthProvider";
 import Swal from "sweetalert2";
 
@@ -7,15 +7,27 @@ function Details() {
 
   const [datelineOver, setDatelineOver] = useState(false);
   const { user } = useContext(AuthContext);
-  const data = useLoaderData();
-  const { _id, title, photo, type, date, description, amount } = data || {};
+  const [allData, setAllData] = useState({});
+  const [loading, setLoading] = useState([true]);
+  const param = useParams();
+
+  useEffect(() => {
+    fetch(`https://fund-fusions-server.vercel.app/campaign/${param?.id}`)
+      .then(res => res.json())
+      .then(data => {
+        setAllData(data);
+        setLoading(false);
+      })
+  }, []);
+
+  const { _id, title, photo, type, date, description, amount } = allData || {};
 
   useEffect(() => {
     const currentDate = new Date();
-    if (new Date(data?.date) >= currentDate) setDatelineOver(true);
-  }, []);
+    if (new Date(allData?.date) >= currentDate) setDatelineOver(true);
+  }, [allData]);
 
-  const handelDonation = (campId) => {
+  const handelDonation = () => {
     const { email, displayName } = user || {};
 
     if (!datelineOver) {
@@ -45,6 +57,10 @@ function Details() {
           })
         }
       })
+  }
+
+  if (loading) {
+    return <div className='text-3xl min-h-[70vh] grid place-items-center'><span className="loading loading-spinner text-info loading-lg"></span></div>
   }
 
   return (

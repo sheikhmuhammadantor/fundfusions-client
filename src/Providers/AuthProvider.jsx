@@ -50,6 +50,7 @@ function AuthProvider({ children }) {
         email,
         setEmail,
         loading,
+        setLoading,
         createUser,
         signInUser,
         googleSignIn,

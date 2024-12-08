@@ -19,12 +19,11 @@ export const router = createBrowserRouter([
       {
         path: '/campaigns',
         element: <AllCampaign />,
-        loader: () => fetch('https://fund-fusions-server.vercel.app/campaigns')
       },
       {
         path: '/campaign/:id',
         element: <PrivateRoutes><Details /></PrivateRoutes>,
-        loader: ({ params }) => fetch(`https://fund-fusions-server.vercel.app/campaign/${params.id}`)
+        // loader: ({ params }) => fetch(`https://fund-fusions-server.vercel.app/campaign/${params.id}`)
       },
       {
         path: '/myCampaign',

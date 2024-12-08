@@ -6,6 +6,7 @@ function MyCampaign() {
 
   const { user } = useContext(AuthContext);
   const [myCamp, setMyCamp] = useState([]);
+  const [loading, setLoading] = useState([true]);
 
   useEffect(() => {
     if (user?.email) {
@@ -13,9 +14,14 @@ function MyCampaign() {
         .then(res => res.json())
         .then(data => {
           setMyCamp(data);
+          setLoading(false);
         })
     }
   }, []);
+
+  if (loading) {
+    return <div className='text-3xl min-h-[70vh] grid place-items-center'><span className="loading loading-spinner text-info loading-lg"></span></div>
+  }
 
   if(!myCamp.length) return <h1 className="text-center text-4xl my-16 font-semibold">No Campaign Available Yet</h1>
 

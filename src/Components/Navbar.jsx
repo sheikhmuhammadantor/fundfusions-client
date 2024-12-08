@@ -85,7 +85,7 @@ function Navbar() {
             :
             <div className='flex items-center gap-2'>
               <Link to="/login" className="btn text-lg">Login</Link>
-              <Link to="/register" className="btn text-lg">Register</Link>
+              <Link to="/register" className="btn text-lg hidden sm:flex">Register</Link>
             </div>
         }
       </div>

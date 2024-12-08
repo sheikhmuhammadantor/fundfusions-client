@@ -1,17 +1,21 @@
-import { useContext, useState } from "react";
-import { Link, useLoaderData } from "react-router-dom"
-import { AuthContext } from "../Providers/AuthProvider";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom"
 
 function AllCampaign() {
 
-  const { loading } = useContext(AuthContext);
-  const obj = useLoaderData();
-  const [allCamp, setAllCamp] = useState(obj);
+  const [allCamp, setAllCamp] = useState([]);
+  const [loading, setLoading] = useState([true]);
+
+  useEffect(() => {
+    fetch(`https://fund-fusions-server.vercel.app/campaigns`)
+      .then(res => res.json())
+      .then(data => {
+        setAllCamp(data);
+        setLoading(false);
+      })
+  }, []);
 
   const handelSortClick = () => {
-    // const [...sortCamp] = allCamp.sort((a, b) => parseInt(a.amount) - parseInt(b.amount));
-    // setAllCamp(sortCamp);
-
     fetch('https://fund-fusions-server.vercel.app/campaigns/sort')
       .then((res) => res.json())
       .then((data) => setAllCamp([...data]))
