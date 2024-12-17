@@ -25,7 +25,7 @@ function AddCampaign() {
 
     const newCampaign = { title, type, date, description, name, email, amount, photo }
 
-    fetch('https://fund-fusions-server.vercel.app/addCampaign', {
+    fetch(`${import.meta.env.VITE_URL}/addCampaign`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json'

@@ -12,7 +12,7 @@ function Details() {
   const param = useParams();
 
   useEffect(() => {
-    fetch(`https://fund-fusions-server.vercel.app/campaign/${param?.id}`)
+    fetch(`${import.meta.env.VITE_URL}/campaign/${param?.id}`)
       .then(res => res.json())
       .then(data => {
         setAllData(data);
@@ -39,7 +39,7 @@ function Details() {
       })
     }
 
-    fetch('https://fund-fusions-server.vercel.app/campaign/:id', {
+    fetch(`${import.meta.env.VITE_URL}/campaign/:id`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

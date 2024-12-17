@@ -30,7 +30,7 @@ function UpdateCampaign() {
 
     const updateCampaign = { _id, title, type, date, description, amount, photo }
 
-      fetch('https://fund-fusions-server.vercel.app/updateCampaign', {
+      fetch(`${import.meta.env.VITE_URL}/updateCampaign`, {
         method: 'PUT',
         headers: {
           'content-type': 'application/json'

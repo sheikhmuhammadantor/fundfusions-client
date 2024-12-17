@@ -7,7 +7,7 @@ function AllCampaign() {
   const [loading, setLoading] = useState([true]);
 
   useEffect(() => {
-    fetch(`https://fund-fusions-server.vercel.app/campaigns`)
+    fetch(`${import.meta.env.VITE_URL}/campaigns`)
       .then(res => res.json())
       .then(data => {
         setAllCamp(data);
@@ -16,7 +16,7 @@ function AllCampaign() {
   }, []);
 
   const handelSortClick = () => {
-    fetch('https://fund-fusions-server.vercel.app/campaigns/sort')
+    fetch(`${import.meta.env.VITE_URL}/campaigns/sort`)
       .then((res) => res.json())
       .then((data) => setAllCamp([...data]))
   }

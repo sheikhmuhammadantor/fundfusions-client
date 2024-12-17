@@ -16,7 +16,7 @@ function CampTableData({ data, idx, myCamp, setMyCamp }) {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://fund-fusions-server.vercel.app/myCampaign/${id}`, {
+                fetch(`${import.meta.env.VITE_URL}/myCampaign/${id}`, {
                     method: 'DELETE',
                 }).then(res => res.json())
                     .then(data => {
