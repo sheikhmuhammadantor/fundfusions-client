@@ -1,12 +1,12 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"
-import { AuthContext } from "../Providers/AuthProvider";
 import Swal from "sweetalert2";
+import useAuth from "../Hook/useAuth";
 
 function Details() {
 
   const [datelineOver, setDatelineOver] = useState(false);
-  const { user } = useContext(AuthContext);
+  const { user } = useAuth();
   const [allData, setAllData] = useState({});
   const [loading, setLoading] = useState([true]);
   const param = useParams();
