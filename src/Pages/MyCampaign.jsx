@@ -1,19 +1,19 @@
 import { useEffect, useState } from "react";
 import CampTableData from "../Components/MyCampaign/CampTableData";
-import axios from "axios";
 import useAuth from "../Hook/useAuth";
+import useAxios from "../Hook/useAxios";
 
 function MyCampaign() {
 
   const { user } = useAuth();
   const [myCamp, setMyCamp] = useState([]);
   const [loading, setLoading] = useState([true]);
+  const axiosSecure = useAxios();
 
   useEffect(() => {
     if (user?.email) {
-      axios.get(`${import.meta.env.VITE_URL}/myCampaign?email=${user.email}`, {
-        withCredentials: true,
-      }).then(data => {
+      axiosSecure.get(`/myCampaign?email=${user.email}`)
+      .then(data => {
         setMyCamp(data.data);
         setLoading(false);
       })
