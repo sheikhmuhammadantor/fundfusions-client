@@ -1,14 +1,13 @@
-import React, { useContext, useState } from 'react'
-import { AuthContext } from '../Providers/AuthProvider';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import { auth } from '../Firebase/firebase';
+import useAuth from '../Hook/useAuth';
 
 function Register() {
 
-  const { createUser, googleSignIn } = useContext(AuthContext);
-  const navigate = useNavigate();
+  const { createUser, googleSignIn } = useAuth()
   const [error, setError] = useState('');
   const [showPassword, setShowPassword] = useState(false);
 

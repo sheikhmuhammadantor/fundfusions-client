@@ -1,11 +1,11 @@
-import { useContext, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import CampaignCard from "./CampaignCard";
-import { AuthContext } from "../../Providers/AuthProvider";
+import useAuth from "../../Hook/useAuth";
 
 function RunningCampaign() {
 
   const [camp, setCamp] = useState([]);
-  const { loading } = useContext(AuthContext);
+  const { loading } = useAuth();
 
   useEffect(() => {
     const currentDate = new Date();

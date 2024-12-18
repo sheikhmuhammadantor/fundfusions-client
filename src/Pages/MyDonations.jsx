@@ -1,10 +1,10 @@
-import { useContext, useEffect, useState } from "react"
-import { AuthContext } from "../Providers/AuthProvider";
+import { useEffect, useState } from "react"
 import CampaignCard from "../Components/Home/CampaignCard";
+import useAuth from "../Hook/useAuth";
 
 function MyDonations() {
 
-  const { user } = useContext(AuthContext);
+  const { user } = useAuth();
   const [myCamp, setMyCamp] = useState([]);
   const [loading, setLoading] = useState([true]);
 

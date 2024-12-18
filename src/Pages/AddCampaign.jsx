@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 import Swal from 'sweetalert2';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { useContext, useState } from "react";
-import { AuthContext } from "../Providers/AuthProvider";
+import { useState } from "react";
+import useAuth from "../Hook/useAuth";
 
 function AddCampaign() {
 
   const [startDate, setStartDate] = useState(new Date());
-  const { user } = useContext(AuthContext);
+  const { user } = useAuth();
   const {email, displayName:name} = user || {};
 
   const handelAddCampaign = (e) => {

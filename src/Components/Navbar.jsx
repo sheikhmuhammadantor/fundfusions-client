@@ -1,15 +1,15 @@
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 import { FaBars } from 'react-icons/fa'
 import { Link, NavLink } from 'react-router-dom'
 import logo from '../assets/logo.png'
 import toast from 'react-hot-toast'
-import { AuthContext } from '../Providers/AuthProvider'
 import { RiSunLine } from 'react-icons/ri'
 import { IoIosMoon } from 'react-icons/io'
+import useAuth from '../Hook/useAuth'
 
 function Navbar() {
 
-  const { user, signOutUser } = useContext(AuthContext)
+  const { user, signOutUser } = useAuth();
   const [theme, setTheme] = useState("dark");
 
   const html = document.getElementsByTagName('html')[0];

@@ -1,12 +1,12 @@
-import React, { useContext, useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
-import { AuthContext } from '../Providers/AuthProvider';
 import toast from 'react-hot-toast';
 import { FaRegEye, FaRegEyeSlash } from 'react-icons/fa';
+import useAuth from '../Hook/useAuth';
 
 function Login() {
 
-    const { signInUser, googleSignIn, setEmail } = useContext(AuthContext);
+    const { signInUser, googleSignIn, setEmail } = useAuth();
     const navigate = useNavigate();
     const [showPassword, setShowPassword] = useState(false);
     const emailRef = useRef();
