@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import { auth } from '../Firebase/firebase';
@@ -10,6 +10,7 @@ function Register() {
   const { createUser, googleSignIn } = useAuth()
   const [error, setError] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
 
 
   const handelShowPassword = () => {

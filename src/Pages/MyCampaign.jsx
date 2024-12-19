@@ -13,10 +13,10 @@ function MyCampaign() {
   useEffect(() => {
     if (user?.email) {
       axiosSecure.get(`/myCampaign?email=${user.email}`)
-      .then(data => {
-        setMyCamp(data.data);
-        setLoading(false);
-      })
+        .then(data => {
+          setMyCamp(data.data);
+          setLoading(false);
+        })
     }
   }, []);
 

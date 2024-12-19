@@ -9,7 +9,7 @@ const instance = axios.create({
 
 function useAxios() {
 
-    const { signOutUser } = useAuth();
+    const { signOutUser, setLoading } = useAuth();
 
     useEffect(() => {
         instance.interceptors.response.use(res => {
@@ -23,6 +23,7 @@ function useAxios() {
                         console.log(err);
                     })
             }
+            setLoading(false);
             return Promise.reject(error);
         })
     }, [])
