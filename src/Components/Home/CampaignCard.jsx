@@ -17,10 +17,8 @@ function CampaignCard({ data, callFrom }) {
             <div className="card-body">
                 <h2 className="card-title">{title}</h2>
                 <div className="badge badge-success text-white p-3">${amount}</div>
-                <p>{description}</p>
-                <p>{type}</p>
-                <p>{date}</p>
-                <div className="card-actions justify-center mt-4">
+                <p>{`${description.slice(0,80)} ...`}</p>
+                <div className="card-actions justify-center">
                     {
                         callFrom ? '' :
                             <button onClick={handelSeeDetails} className="btn btn-sm btn-accent text-lg px-8 disabled:btn-info disabled:opacity-60 disabled:cursor-none">See mote</button>

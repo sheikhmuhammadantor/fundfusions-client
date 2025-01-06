@@ -48,7 +48,7 @@ function AuthProvider({ children }) {
                 }).then(res => console.log('LogOut', res.data))
             }
             setLoading(false)
-            console.log('User', currentUser);
+            console.log('User -', '"currentUser"');
         })
 
         return () => {

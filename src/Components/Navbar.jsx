@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { FaBars } from 'react-icons/fa'
 import { Link, NavLink } from 'react-router-dom'
-import logo from '../assets/logo.png'
 import toast from 'react-hot-toast'
 import { RiSunLine } from 'react-icons/ri'
 import { IoIosMoon } from 'react-icons/io'
@@ -10,7 +9,7 @@ import useAuth from '../Hook/useAuth'
 function Navbar() {
 
   const { user, signOutUser } = useAuth();
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState("light");
 
   const html = document.getElementsByTagName('html')[0];
   html.setAttribute("data-theme", theme);
@@ -26,10 +25,20 @@ function Navbar() {
 
   const links = <>
     <li><NavLink to="/">Home</NavLink></li>
-    <li><NavLink to="/addCampaign">Add Campaign</NavLink></li>
     <li><NavLink to="/campaigns">All Campaign</NavLink></li>
-    <li><NavLink to="/myCampaign">My Campaign</NavLink></li>
-    <li><NavLink to="/myDonations">My Donations</NavLink></li>
+    {
+      user?.email ?
+        <>
+          <li><NavLink to="/addCampaign">Add Campaign</NavLink></li>
+          <li><NavLink to="/myCampaign">My Campaign</NavLink></li>
+          <li><NavLink to="/myDonations">My Donations</NavLink></li>
+        </>
+        : <>
+          <li><NavLink to="/aboutUs">About Us</NavLink></li>
+          <li><NavLink to="/contact">Contact</NavLink></li>
+          <li><NavLink to="/support">Support</NavLink></li>
+        </>
+    }
   </>
 
   const handelSignOut = () => {
@@ -43,7 +52,7 @@ function Navbar() {
   }
 
   return (
-    <div className="navbar container mx-auto">
+    <div className="navbar container mx-auto fixed top-0 left-[50%] -translate-x-[50%] z-50 bg-base-100 px-6">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -51,10 +60,19 @@ function Navbar() {
           </div>
           <ul tabIndex={0} className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
             {links}
+            {
+              user?.email ?
+                <>
+                  <li><NavLink to="/aboutUs">About Us</NavLink></li>
+                  <li><NavLink to="/contact">Contact</NavLink></li>
+                  <li><NavLink to="/support">Support</NavLink></li>
+                </>
+                : ""
+            }
           </ul>
         </div>
-        <Link to='/' className="btn btn-ghost text-xl px-0">
-          <img className='h-full bg-white rounded-lg' src={logo} alt="FundFusions Logo" />
+        <Link to='/' className="btn bg-transparent hover:bg-transparent border-none text-xl px-0">
+          <span className='font-extrabold text-3xl'>FundFusions</span>
         </Link>
         <span onClick={handelChangeTheme} className="btn btn-sm text-2xl hidden md:block ml-2">
           {

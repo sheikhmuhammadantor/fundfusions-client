@@ -64,10 +64,10 @@ function Details() {
   }
 
   return (
-    <div className="px-2">
-      <div className="card card-compact bg-base-100 max-w-[800px] mx-auto my-12 shadow-xl border md:flex-row p-3 sm:p-5">
+    <div className="px-2 my-8">
+      <div className="card card-compact bg-base-100 mx-auto shadow-xl border md:flex-row p-3 sm:p-5">
         <figure>
-          <img className="rounded-xl" src={photo} alt={title} />
+          <img className="rounded-xl min-h-full object-cover" src={photo} alt={title} />
         </figure>
         <div className="card-body">
           <h2 className="card-title">{title}</h2>

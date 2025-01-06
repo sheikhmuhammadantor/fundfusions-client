@@ -3,11 +3,11 @@ import { Tooltip as ReactTooltip } from "react-tooltip";
 
 function InvestorsSay() {
   return (
-    <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 justify-evenly text-center gap-y-8 gap-5 my-12'>
-      <div className='lg:col-span-3 md:col-span-2 col-span-1 text-5xl font-semibold mb-4 text-left'>
-        <h1 className="text-5xl font-semibold text-center">
+    <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 justify-evenly text-center gap-y-8 gap-5 my-8'>
+      <div className='lg:col-span-3 md:col-span-2 col-span-1 text-4xl font-semibold mb-4 text-left'>
+        <h1 className="text-4xl font-semibold text-center">
           What Investors are Saying{''}
-          <span className="font-bold text-7xl text-[#477594]">
+          <span className="font-bold text-5xl text-[#477594]">
             <Typewriter
               words={['', '']}
               loop={5}

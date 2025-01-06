@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom"
+import CampaignCard from "../Components/Home/CampaignCard";
 
 function AllCampaign() {
 
@@ -7,9 +8,13 @@ function AllCampaign() {
   const [loading, setLoading] = useState([true]);
 
   useEffect(() => {
+    const currentDate = new Date();
+
     fetch(`${import.meta.env.VITE_URL}/campaigns`)
       .then(res => res.json())
       .then(data => {
+        // const newCamp = [...data].filter((obj) => new Date(obj.date) >= currentDate)
+        // setCamp(newCamp.slice(0, 6));
         setAllCamp(data);
         setLoading(false);
       })
@@ -31,31 +36,10 @@ function AllCampaign() {
     <div className="mb-16">
       <div className="text-right mr-6"><button onClick={handelSortClick} className="btn btn-warning text-black text-xl">Sort</button></div>
       <h1 className="text-center text-4xl mb-8 font-semibold">All Campaigns: {allCamp?.length}</h1>
-      <div className="overflow-x-auto">
-        <table className="table">
-          <thead>
-            <tr>
-              <th>No.</th>
-              <th>Title</th>
-              <th className="hidden sm:block">Campaign Type</th>
-              <th>Dateline</th>
-              <th>Amount</th>
-            </tr>
-          </thead>
-          <tbody>
-            {
-              allCamp.map((data, idx) =>
-                <tr key={data?._id}>
-                  <th>{idx + 1}</th>
-                  <th>{data?.title}</th>
-                  <td className="hidden sm:block">{data?.type}</td>
-                  <td>{data?.date}</td>
-                  <td>${data?.amount}</td>
-                  <td><Link to={`/campaign/${data?._id}`} className="badge badge-accent min-w-max">See more</Link></td>
-                </tr>)
-            }
-          </tbody>
-        </table>
+      <div className="items-stretch grid grid-cols-1 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-x-8 gap-y-10 place-items-center">
+        {
+          allCamp?.map((data) => <CampaignCard key={data._id} data={data} />)
+        }
       </div>
     </div>
   )

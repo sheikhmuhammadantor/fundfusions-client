@@ -9,6 +9,8 @@ import Register from "./Pages/Register";
 import MyCampaign from "./Pages/MyCampaign";
 import MyDonations from "./Pages/MyDonations";
 import UpdateCampaign from "./Pages/UpdateCampaign";
+import AboutUs from "./Pages/Static/AboutUs.jsx";
+import Contact from "./Pages/Static/Contact.jsx";
+import Support from "./Pages/Static/Support.jsx";
 
-
-export { MainLayout, ErrorPage, Home, AddCampaign, AllCampaign, Details, Login, Register, MyCampaign, MyDonations, UpdateCampaign }
+export { MainLayout, ErrorPage, Home, AddCampaign, AllCampaign, Details, Login, Register, MyCampaign, MyDonations, UpdateCampaign, Contact, AboutUs, Support };

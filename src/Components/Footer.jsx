@@ -1,12 +1,12 @@
+import { FaFacebook, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
-import logo from '../assets/logo.png'
 
 function Footer() {
   return (
     <footer className="footer p-10 container mx-auto font-semibold">
       <aside className='mx-auto'>
-        <Link to='/' className="btn btn-ghost text-xl px-0">
-          <img className='h-full bg-white rounded-lg' src={logo} alt="FundFusions Logo" />
+        <Link to='/' className="btn bg-transparent hover:bg-transparent border-none text-xl px-0">
+          <span className='font-extrabold text-3xl'>FundFusions</span>
         </Link>
         <p>
           An online real estate investing platform
@@ -15,39 +15,19 @@ function Footer() {
         </p>
       </aside>
       <nav className='mx-auto'>
-        <h6 className="footer-title">About</h6>
-        <a className="link link-hover">About CrowdStreet</a>
-        <a className="link link-hover">Careers</a>
-        <a className="link link-hover">Disclosures</a>
-        <a className="link link-hover">Contact Us</a>
-        <a className="link link-hover">Company News</a>
+      <h6 className="footer-title">Links</h6>
+        <div className="flex gap-3 md:justify-normal justify-center">
+          <Link to='https://github.com/sheikhmuhammadantor' target="_blank" className="text-2xl outline outline-2 hover:outline-indigo-800 cursor-pointer delay-100 rounded-full p-1 hover:text-indigo-700"><FaGithub /></Link>
+          <Link to='https://www.linkedin.com/in/sheikh-muhammad-antor-570765290/' target="_blank" className="text-2xl outline outline-2 hover:outline-indigo-800 cursor-pointer delay-100 rounded-full p-1 hover:text-indigo-700"><FaLinkedin /></Link>
+          <Link to='https://x.com/iamAntorSheikh' target="_blank" className="text-2xl outline outline-2 hover:outline-indigo-800 cursor-pointer delay-100 rounded-full p-1 hover:text-indigo-700"><FaTwitter /></Link>
+          <Link to='https://web.facebook.com/sheikhmuhammadantor' target="_blank" className="text-2xl outline outline-2 hover:outline-indigo-800 cursor-pointer delay-100 rounded-full p-1 hover:text-indigo-700"><FaFacebook /></Link>
+        </div>
       </nav>
       <nav className='mx-auto'>
-        <h6 className="footer-title">Invest</h6>
-        <a className="link link-hover">Marketplace</a>
-        <a className="link link-hover">Ways To Invest</a>
-        <a className="link link-hover">Marketplace Performance</a>
-        <a className="link link-hover">Investment Screening Process</a>
-        <a className="link link-hover">Our Investor Commitments</a>
-        <a className="link link-hover">Previous Investment</a>
-        <a className="link link-hover">Opportunities</a>
-      </nav>
-      <nav className='mx-auto'>
-        <h6 className="footer-title">INVESTOR RESOURCES</h6>
-        <a className="link link-hover">CRE Education</a>
-        <a className="link link-hover">CRE Market Outlook</a>
-        <a className="link link-hover">New Investor Orientation</a>
-        <a className="link link-hover">Help Center</a>
-      </nav>
-      <nav className='mx-auto'>
-        <h6 className="footer-title">FOR SPONSORS</h6>
-        <a className="link link-hover">Raise Capital</a>
-        <a className="link link-hover">Is Your Deal Right For</a>
-        <a className="link link-hover">CrowdStreet?</a>
-        <a className="link link-hover">Get On The Marketplace</a>
-        <a className="link link-hover">Post Fundraiser Management</a>
-        <a className="link link-hover">Results</a>
-        <a className="link link-hover">Request Info</a>
+        <h6 className="footer-title">Links</h6>
+        <Link className="link link-hover">About</Link>
+        <Link className="link link-hover">Contact Us</Link>
+        <Link className="link link-hover">Support</Link>
       </nav>
     </footer>
   )

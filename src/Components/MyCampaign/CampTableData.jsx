@@ -3,7 +3,7 @@ import { ImCross } from 'react-icons/im'
 import { Link } from 'react-router-dom'
 import Swal from 'sweetalert2';
 
-function CampTableData({ data, idx, myCamp, setMyCamp }) {
+function CampTableData({ data, idx, myCamp, setMyCamp, campaign }) {
 
     const handelDeleteCampaign = (id) => {
         Swal.fire({
@@ -40,8 +40,16 @@ function CampTableData({ data, idx, myCamp, setMyCamp }) {
             <th>{data?.title}</th>
             <td className="hidden sm:block">${data?.amount}</td>
             <td>{data?.date}</td>
-            <td><Link to={`/updateCampaign/${data?._id}`} className="badge badge-accent min-w-max">Update</Link></td>
-            <td onClick={() => handelDeleteCampaign(data?._id)}><ImCross className="bg-red-600 box-content p-2 rounded-xl" /></td>
+            {
+                campaign ?
+                    <>
+                        <td><Link to={`/updateCampaign/${data?._id}`} className="badge badge-accent min-w-max">Update</Link></td>
+                        <td onClick={() => handelDeleteCampaign(data?._id)}><ImCross className="bg-red-600 box-content p-2 rounded-xl" /></td>
+                    </>
+                    : <>
+                    <td>{data?.type}</td>
+                    </>
+            }
         </tr>
     )
 }

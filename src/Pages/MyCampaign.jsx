@@ -41,7 +41,7 @@ function MyCampaign() {
           </thead>
           <tbody>
             {
-              myCamp?.map((data, idx) => <CampTableData key={data?._id} data={data} idx={idx} myCamp={myCamp} setMyCamp={setMyCamp} />)
+              myCamp?.map((data, idx) => <CampTableData key={data?._id} data={data} idx={idx} myCamp={myCamp} setMyCamp={setMyCamp} campaign={true} />)
             }
           </tbody>
         </table>

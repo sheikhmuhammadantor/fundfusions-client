@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import CampaignCard from "../Components/Home/CampaignCard";
 import useAuth from "../Hook/useAuth";
+import CampTableData from "../Components/MyCampaign/CampTableData";
 
 function MyDonations() {
 
@@ -27,13 +28,26 @@ function MyDonations() {
 
   return (
     <div className="m-8">
-      <h1 className="text-5xl font-semibold text-center mb-16">
+      <h1 className="text-4xl font-semibold text-center mb-6">
         My Donation's
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10 place-items-center">
-        {
-          myCamp.map((data) => <CampaignCard key={data._id} data={data} callFrom="myDonation" />)
-        }
+      <div className="overflow-x-auto">
+        <table className="table">
+          <thead>
+            <tr>
+              <th>No.</th>
+              <th>Title</th>
+              <th className="hidden sm:block">Amount</th>
+              <th>Dateline</th>
+              <th>Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              myCamp?.map((data, idx) => <CampTableData key={data?._id} data={data} idx={idx} myCamp={myCamp} setMyCamp={setMyCamp} campaign={false} />)
+            }
+          </tbody>
+        </table>
       </div>
     </div>
   )

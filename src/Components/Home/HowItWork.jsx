@@ -4,8 +4,8 @@ import unity from '../../assets/unity.png'
 
 function HowItWork() {
   return (
-    <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 justify-evenly text-center gap-y-6 my-12'>
-      <div className='lg:col-span-3 md:col-span-2 col-span-1 text-5xl font-semibold'>How It Works</div>
+    <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 justify-evenly text-center gap-y-6 my-10'>
+      <div className='lg:col-span-3 md:col-span-2 col-span-1 text-4xl font-semibold'>How It Works</div>
       <div>
         <img className='h-20 mx-auto my-4' src={money} alt="" />
         <h3 className='text-2xl font-semibold my-2'>Fund a Campaign</h3>

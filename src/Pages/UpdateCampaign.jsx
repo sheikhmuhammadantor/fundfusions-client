@@ -8,7 +8,7 @@ function UpdateCampaign() {
 
   const campData = useLoaderData();
   const [startDate, setStartDate] = useState(new Date());
-  console.log(campData);
+  // console.log(campData);
   // console.log(startDate);
   const { _id, photo, title, type, amount, date, description, email, name } = campData || {};
   const [defaultType, setDefaultType] = useState(type);
